@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Book Your Next Adventure</title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="css/bookingForm.css">
+    </head>
+    <body>
+        <section>
+            <header>
+                <nav class="nav">
+                    <ul class="navlinks">
+                        <li class="link"><a href="mainPage.html">Home</a></li>
+                        <li class="link"><a href="pckg1.html">Istanbul</a></li>
+                        <li class="link"><a href="pckg2.html">Hong Kong</a></li>
+                        <li class="link"><a href="pckg3.html">Lisbon</a></li>
+                        <li class="link"><a href="bookingForm.html">Bookings</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="search">
+                <input class="srch" type="search" name="" placeholder="Search">
+                <a href="#"> <button class="btn">Search</button></a>
+            </div>
+            <div class="awaits">
+                <h1>Adventure Awaits, Arcadia Beckons!</h1>
+                <p>Explore More. Experience Better.</p>    
+            </div>
+        </section>
+        <main>
+            <section>
+                <header>
+                    <h1>Book Your Next Adventure</h1>
+                </header>
+            </section> 
+            <form method="get" action="" id="bookingForm">
+                <!--Flight Details-->
+                <h2> Flight Details</h2>
+                <p>
+                    <label for="first_name">First Name*:</label>
+                    <input type="text" name="firstName" id="first_name" placeholder="Enter Your First Name" required/>
+                </p>
+                <p>
+                    <label for="last_name">Last Name*:</label>
+                    <input type="text" name="last_name" id="last_name" placeholder="Enter Your Last Name" required/>
+                </p>
+                <p>
+                    <label for="phone">Phone Number*:</label>
+                    <input type="number" name="phone" id="phone" required>
+                </p>
+                <p>
+                    <label for="email">Email*:</label>
+                    <input type="email" name="email" id="email" placeholder="user@domain.edu" required/>
+                </p>
+                <p>
+                    <label for="travel_date_start">Travel Date*:</label>
+                    <input type="date" name="travel_date_start" id="travel_date_start" required>
+                </p>
+                <p>
+                    <label for="qty">Number of Adults:</label>
+                    <input type="number" name="qty" id="qty_adults" min="0" step="1" required>
+                </p>
+                <p>
+                    <label for="qty">Number of Children:</label>
+                    <input type="number" name="qty" id="qty_children" min="0" step="1" required>
+                </p>
+                <p>
+                    <label for="package">Destination*:</label>
+                    <select name="package" id="package" autofocus required>
+                        <option value=""></option>
+                        <option value="1">Istanbul</option>
+                        <option value="2">Hong Kong</option>
+                        <option value="3">Lisbon</option>
+                    </select>
+                </p>
+                <p>
+                    <fieldset class="addon-services">
+                        <legend>Add-On Services</legend>
+                        <input type="checkbox" name="pick_add_on" id="pick_add_on_1" value="1"><label for="pick_add_on_1">Car Rentals</label>
+                        <input type="checkbox" name="pick_add_on" id="pick_add_on_2" value="2"><label for="pick_add_on_2">Guided Tours</label>
+                        <input type="checkbox" name="pick_add_on" id="pick_add_on_3" value="3"><label for="pick_add_on_3">Hotel Bookings</label>    
+                    </fieldset>
+                </p>
+
+                <!--Address Input-->
+                <h2>Address Information</h2>
+                <p>
+                    <label for="address_line1">Address Line 1*:</label>
+                    <input type="text" name="address_line1" id="address_line1" placeholder="Enter your primary address" required/>
+                </p>
+                <p>
+                    <label for="address_line2">Address Line 2:</label>
+                    <input type="text" name="address_line2" id="address_line2" placeholder="Apartment, building, floor (optional)"/>
+                </p>
+                <p>
+                    <label for="city">City*:</label>
+                    <input type="text" name="city" id="city" placeholder="City" required/>
+                </p>
+                <p>
+                    <label for="state">State/Province*:</label>
+                    <input type="text" name="state" id="state" placeholder="State" required/>
+                </p>
+                <p>
+                    <label for="zip_code">ZIP/Postal Code*:</label>
+                    <input type="text" name="zip_code" id="zip_code" placeholder="ZIP/Postal Code" required/>
+                </p>
+
+                <p>
+                    <label for="country">Country*:</label>
+                    <input type="text" name="country" id="country" placeholder="Country" required/>
+                </p>
+
+                <!--Card Payment Section-->
+                <h2>Payment Information</h2>
+                <p>
+                    <label for="card_name">Cardholder Name*:</label>
+                    <input type="text" name="card_name" id="card_name" placeholder="Name on Card" required/>
+                </p>
+                <p>
+                    <label for="card_number">Card Number*:</label>
+                    <input type="text" name="card_number" id="card_number" placeholder="1111 2222 3333 4444" required/>
+                </p>
+                <p>
+                    <label for="exp">Expiration Date*:</label>
+                    <input type="month" name="exp" id="exp" required/>
+                </p>
+                <p>
+                    <label for="cvv">CVV*:</label>
+                    <input type="text" name="cvv" id="cvv" placeholder="000" required/>
+                </p>
+
+                <h2>Package Total Calculation</h2>
+                    <!-- Price Inputs -->
+                    <div class="output">
+                        Package Price: $<span id="item-price">0.00</span>
+                    </div>
+
+                     <!-- Traveler Count Output -->
+                    <div class="output">
+                        Total Travelers: <span id="total-travelers">1</span>
+                    </div>
+                    <div class="output">
+                        Add-on Price: $<span id="add-on-price">0.00</span>
+                    </div>
+
+                    <!-- Outputs -->
+                    <div class="output">
+                        Subtotal: $<span id="subtotal">0.00</span>
+                    </div>
+                    <div class="output">
+                        Tax: $<span id="tax">0.00</span>
+                    </div>
+                    <div class="output">
+                        Total: $<span id="total">0.00</span>
+                    </div>
+                    <button type="submit" id="submitButton">Continue to Checkout</button>
+                    <button type="reset" id="resetButton">Reset Form</button>
+            </form>
+        </main>
+        <script src="js/bookingForm.js"></script>
+        <footer>
+            <div>
+                <a href="bookingForm.html">
+                    <button id="btn">Book Now!</button>
+                </a>
+            </div>
+            <div>
+                <h2>Contact Us</h2>
+                <p>Address: 470 Grand Avenue, Sanford, FL, 32771</p>
+                <p>Phone: 407-431-8293</p>
+                <p>Email: contact@adventurearcadia.com</p>
+            </div>
+            <div>
+                <p>&copy; 2024 Adventure Acadia</p>
+            </div>
+        </footer>
+    </body>
+</html>
